@@ -21,6 +21,6 @@
   },
   "description": "1. Clone project\r 2. Run ```yarn/npm install```",
   "main": "index.js",
-  "author": "",
+  "author": "Ravinder Kumar Bhardwaj",
   "license": "ISC"
 }
