@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.pearon-users {
+  background: #ffffff;
+  padding: 0 30px;
+}
+
+.pearon-users h1 {
+  font-size: 36px;
+  padding-left: 30px;
+}
+
+.pearon-users .user-container {
+  background: #d8d8d8;
+  padding: 60px 30px 30px;
+  display: grid;
+  grid-template-rows: auto;
+  grid-column-gap: 37px;
+  grid-row-gap: 50px;
+  justify-items: center;
+  grid-template-columns: repeat(5, 212px [col-start]);
+}
+
+.user-container .user-content {
+  background: #ffffff;
+  width: 212px;
+  height: 120px;
+  position: relative;
+  top: 0;
+}
+
+.user-content h3 {
+  font-size: 18px;
+  color: #e9e9e9;
+  text-align: center;
+  position: absolute;
+  top: 38%;
+  width: 100%;
+}
+
+.user-content .delete {
+  font-size: 14px;
+  color: #007FA3;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.user-content .avatar {
+  position: absolute;
+  top: -40px;
+  left: 30%;
+}
+
+.user-content .avatar img {
+  border-radius: 50%;
+  width: 80px;
+}
+
+.no-user-content {
+  grid-column: 3;
+  font-size: 15px;
+}
+
+
+@media screen and (max-width: 350px )  {
+  .pearon-users .user-container {
+    grid-template-columns: repeat(1, 212px [col-start]);
+  }
+
+  .pearon-users {
+    padding: 0 5px;
+  }
+}
+
+@media screen and (max-width: 768px ) {
+  .pearon-users .user-container {
+    grid-template-columns: repeat(3, 212px [col-start]);
+  }
+
+  .pearon-users {
+    padding: 0 0;
+  }
+  .pearon-users .user-container {
+    padding: 60px 20px 30px;
+  }
+}
