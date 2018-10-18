@@ -9,7 +9,7 @@ const PearsonUsersView = (props) => {
     const userView = users.length > 0 ? users.map(user => (
         <div key={user.id} className="user-content">
             <div className="avatar"><img src={user.avatar} alt={user.avatar} /></div>
-            <h3>{`${user.first_name} ${user.last_name} `}</h3>
+            <h3>{`${user.first_name} ${user.last_name}`}</h3>
             <button
                 className="delete"
                 onClick={() => deleteUser(user.id)}

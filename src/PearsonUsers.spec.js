@@ -60,6 +60,25 @@ describe("PearsonUsers", () => {
     expect(listContainer.length).toEqual(usersList.length)
   });
 
+  it('should display the user first name, last name and avatar', () => {
+    const listUsers = [{
+      id: 4,
+      first_name: "Eve",
+      last_name: "Holt",
+      avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
+    }];
+    viewWrapper = shallow(<PearsonUsersView
+      users={listUsers}
+      deleteUser={instance.deleteUser}
+    />);
+    const listContainer = viewWrapper.find(".user-container").children();
+    const [user] = listUsers;
+    const name = listContainer.find('h3');
+    const img = listContainer.find('img');
+    expect(name.text()).toEqual(`${user.first_name} ${user.last_name}`);
+    expect(img.prop('src')).toEqual(user.avatar);
+  });
+
   it("should remove the duplicate user from the users list", () => {
     const expectedUserList = [{ id: 1, name: "A" }, { id: 2, name: "B" }, { id: 3, name: "D" }];
     instance.removeDuplicateUsers(usersList);
